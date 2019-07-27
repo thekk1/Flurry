@@ -1,7 +1,8 @@
 # Flurry
 WoW - Addon - Change equip by zone (and subzone)
 
-Download https://github.com/thekk1/Flurry/releases/download/v1.0/Flurry.zip
+Download Release V1 und releases:
+https://github.com/thekk1/Flurry/releases/download/v1.0/Flurry.zip
 and unzip to your WoW Addon folder. (..\World of Warcraft\_retail_\Interface\AddOns).
 
 ## Addon changes equip by this events:
