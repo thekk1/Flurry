@@ -31,16 +31,22 @@ For example the warrior's book:
 ### Standart outfit:
 For fallback outfits I have implemented a not existing "zones" named "Standard" in each Spec-file which is used in every case where is no configurated zone. E.g. I use it for my PvP gear.
 
-### Example1:
+### Example 1:
 Lets make a Outfit for Nazjatar and The Eternal Palace and call it "Nazjatar Items" for the fury spec of your incredible warrior.
 So you have to add these two lines to file "Spec2.lua":
 ["Nazjatar"] = "Nazjatar";
 ["The Eternal Palace"] = "Nazjatar";
 
-### Example2:
+### Example 2:
 You want to wear the special cape for murlocs in newhome, make an outfit called "Annoying Murlocs" which ignore all slots excluding the back and set the cape in the back slot.
 So you have to add these line to all trhee files "Spec1.lua, Spec2.lua, Spec3.lua":
 ["Newhome"] = "Annoying Murlocs";
+
+### Example 3:
+It's not needed to setup the exact name of a zone.
+So if you want to wear an outfit in The Eternal Palace the String "Eternal Palace" is enough.
+If you want to wear a special outfit in all zones where have the letters "new", make a config like this:
+["new"] = "iamwithstupid";
 
 ### Pvp:
 Because of a potential long list of battlegrounds and arenas I use the standart outfit for pvp gear and just specialize for special zones like nazjatar.
