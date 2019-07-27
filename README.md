@@ -1,6 +1,9 @@
 # Flurry
 WoW - Addon - Change equip by zone (and subzone)
 
+Download and unzip to your WoW Addon folder. (..\World of Warcraft\_retail_\Interface\AddOns)
+Rename folder "Flurry-master" to "Flurry".
+
 ## Addon changes equip by this events:
 - ZONE_CHANGED
 - ZONE_CHANGED_INDOORS
