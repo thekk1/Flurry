@@ -22,8 +22,8 @@ Rename folder "Flurry-master" to "Flurry".
 - Optional test key: Keysetup -> Others -> FLURRY 
 
 ### Explanation of Spec-files:
-Each file is for of of your Talent specialisation in the order from top to down in your specialisation book.
-For example the warrior'S book:
+Each file is for one of your Talent specialisation in the order from top to down in your specialisation book.
+For example the warrior's book:
 1. Weapon - Spec1.lua
 2. Fury   - Spec2.lua
 3. Tank   . Spec3.lua
