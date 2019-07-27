@@ -1,0 +1,5 @@
+<Bindings>
+	<Binding name="FLURRY" header="FLURRY">
+    Flurry_OnEvent();
+	</Binding>
+</Bindings>

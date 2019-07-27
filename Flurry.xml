@@ -1,0 +1,25 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<!-- $Id$ -->
+	
+	<!-- Localization -->
+	<Script file="Spec1.lua"/>
+	<Script file="Spec2.lua"/>
+	<Script file="Spec3.lua"/>
+	<Script file="Localization.de.lua"/>
+	
+	<!-- My Script -->
+	<Script file="Flurry.lua"/>
+
+	<!-- My AddOn Frames -->
+	<Frame name="FlurryFrame" parent="UIParent">
+		<Scripts>
+			<OnLoad>
+				Flurry_OnLoad();
+			</OnLoad>
+			<OnEvent>
+				Flurry_OnEvent(event);
+			</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>

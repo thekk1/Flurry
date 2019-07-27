@@ -1,0 +1,11 @@
+## Interface: 80200
+## Title: Flurry
+## Notes: Fast equip change by zone.
+## Author: thekk
+## eMail: thekk@gmx.de
+## DefaultState: enabled
+Spec1.lua
+Spec2.lua
+Spec3.lua
+Flurry.lua
+Flurry.xml
