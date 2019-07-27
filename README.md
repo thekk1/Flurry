@@ -29,7 +29,7 @@ For example the warrior's book:
 3. Tank   . Spec3.lua
 
 ### Standart outfit:
-For fallback outfits I have implemented "zones" named "Standart1", "Standart2", "Standart3" in each Spec-file which are used in every case where is no configurated zone.
+For fallback outfits I have implemented a not existing "zones" named "Standard" in each Spec-file which is used in every case where is no configurated zone. E.g. I use it for my PvP gear.
 
 ### Example1:
 Lets make a Outfit for Nazjatar and The Eternal Palace and call it "Nazjatar Items" for the fury spec of your incredible warrior.
