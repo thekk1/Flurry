@@ -50,7 +50,7 @@ local function Flurry_setSpec(list)
 			return;
 		end
 	end
-	EquipSet("Standart", list["Standart"])
+	EquipSet("Standard", list["Standard"])
 end
 
 function Flurry_OnEvent(event)
