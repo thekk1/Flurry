@@ -28,6 +28,9 @@ For example the warrior'S book:
 2. Fury   - Spec2.lua
 3. Tank   . Spec3.lua
 
+### Standart outfit:
+For fallback outfits I have implemented "zones" named "Standart1", "Standart2", "Standart3" in each Spec-file which are used in every case where is no configurated zone.
+
 ### Example1:
 Lets make a Outfit for Nazjatar and The Eternal Palace and call it "Nazjatar Items" for the fury spec of your incredible warrior.
 So you have to add these two lines to file "Spec2.lua":
@@ -39,9 +42,17 @@ You want to wear the special cape for murlocs in newhome, make an outfit called 
 So you have to add these line to all trhee files "Spec1.lua, Spec2.lua, Spec3.lua":
 ["Newhome"] = "Annoying Murlocs";
 
+### Pvp:
+Because of a potential long list of battlegrounds and arenas I use the standart outfit for pvp gear and just specialize for special zones like nazjatar.
+
 ## Hints:
-You can also use subzones in raid and mythic instances for specific gear for ever boss.
-Pls. refer to https://wow.gamepedia.com/Zone or ingame maps.
+You can also use subzones(Showed name of place on minimap) in raid and mythic instances for specific gear for ever boss.
+There is no fully list of all subzones for every zone in BfS like https://wowwiki.fandom.com/wiki/Icecrown#Subregions
+So you have to refer by yourself to the following sites or ingame maps:
+
+- https://wow.gamepedia.com/Arena
+- https://wow.gamepedia.com/Battleground
+- https://wow.gamepedia.com/Zone 
 
 This addon is very simple and very effective.
 I will not do any special development for ingame menu setup because this needs a fully internationalisation
