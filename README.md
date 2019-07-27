@@ -53,7 +53,7 @@ Because of a potential long list of battlegrounds and arenas I use the standart 
 
 ## Hints:
 You can also use subzones(Showed name of place on minimap) in raid and mythic instances for specific gear for ever boss.
-There is no fully list of all subzones for every zone in BfS like https://wowwiki.fandom.com/wiki/Icecrown#Subregions
+There is no fully list of all subzones for every zone in BfA like https://wowwiki.fandom.com/wiki/Icecrown#Subregions
 So you have to refer by yourself to the following sites or ingame maps:
 
 - https://wow.gamepedia.com/Arena
