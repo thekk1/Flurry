@@ -34,8 +34,8 @@ For fallback outfits I have implemented a not existing "zones" named "Standard" 
 ### Example 1:
 Lets make a Outfit for Nazjatar and The Eternal Palace and call it "Nazjatar Items" for the fury spec of your incredible warrior.
 So you have to add these two lines to file "Spec2.lua":
-["Nazjatar"] = "Nazjatar";
-["The Eternal Palace"] = "Nazjatar";
+["Nazjatar"] = "azjatar Items";
+["The Eternal Palace"] = "Nazjatar Items";
 
 ### Example 2:
 You want to wear the special cape for murlocs in newhome, make an outfit called "Annoying Murlocs" which ignore all slots excluding the back and set the cape in the back slot.
