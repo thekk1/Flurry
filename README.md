@@ -34,7 +34,7 @@ For fallback outfits I have implemented a not existing "zones" named "Standard" 
 ### Example 1:
 Lets make a Outfit for Nazjatar and The Eternal Palace and call it "Nazjatar Items" for the fury spec of your incredible warrior.
 So you have to add these two lines to file "Spec2.lua":
-["Nazjatar"] = "azjatar Items";
+["Nazjatar"] = "Nazjatar Items";
 ["The Eternal Palace"] = "Nazjatar Items";
 
 ### Example 2:
