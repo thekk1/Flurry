@@ -18,56 +18,104 @@ function Flurry_OnLoad()
 	-------------------- something stuff --------------------------------
 end
 
-local function doEquip(setID, k, v)
-	local ok = C_EquipmentSet.UseEquipmentSet(setID)
-	if (ok) then
-	print("Zone: "..k.." - Equip: "..v)	
-	end
+local waitTable = {};
+local waitFrame = nil;
+
+function FLURRY_wait(delay, func, ...)
+  if(type(delay)~="number" or type(func)~="function") then
+    return false;
+  end
+  if(waitFrame == nil) then
+    waitFrame = CreateFrame("Frame","WaitFrame", UIParent);
+    waitFrame:SetScript("onUpdate",function (self,elapse)
+      local count = #waitTable;
+      local i = 1;
+      while(i<=count) do
+        local waitRecord = tremove(waitTable,i);
+        local d = tremove(waitRecord,1);
+        local f = tremove(waitRecord,1);
+        local p = tremove(waitRecord,1);
+        if(d>elapse) then
+          tinsert(waitTable,i,{d-elapse,f,p});
+          i = i + 1;
+        else
+          count = count - 1;
+          f(unpack(p));
+        end
+      end
+    end);
+  end
+  tinsert(waitTable,{delay,func,{...}});
+  return true;
 end
 
-local function EquipSet(k, v)
-	--print(k.." "..v)
+local function EquipSet(k, v, secondCall)
 	local setID = C_EquipmentSet.GetEquipmentSetID(v)
-	local _,_,setID,isEquipped,_,_,_,_,_ = C_EquipmentSet.GetEquipmentSetInfo(setID)
-	--print(setID);
+	local name,_,_,isEquipped, numItems, numEquipped, numInInventory, numLost, numIgnored = C_EquipmentSet.GetEquipmentSetInfo(setID)
+	local equippingOk = false
+	--print(name.." "..setID.." is equipped:")
+	--print(isEquipped);
+	--print(numItems.." "..numEquipped.." "..numInInventory.." "..numLost.." "..numIgnored)
 	if(not isEquipped) then
-		doEquip(setID, k, v)
-	end
-end
-
-local function Flurry_setSpec(list)
-	local zoneName = GetZoneText()
-	local subZone = GetSubZoneText()
-	--print("zoneName: "..zoneName)
-	--print(string.find(zoneName, subZone))
-	--print("subzone: "..subZone)
-	--print(string.find(subZone, subZone))
-	for k,v in pairs(list) do
-		--print("key: "..k)
-		--print("value: "..v)
-		if (string.find(zoneName, k) or string.find(subZone, k)) then
-			EquipSet(k, v)
-			return;
+		equippingOk = C_EquipmentSet.UseEquipmentSet(setID)
+		if equippingOk then
+			print("Zone: "..k.." - Equip: "..v)
+			if not secondCall then FlurryFrame:RegisterEvent("EQUIPMENT_SWAP_FINISHED") end
+		else
+			print("No equippent : '"..v.."' for zone: '"..k.."' found")
 		end
 	end
-	EquipSet("Standard", list["Standard"])
+	return isEquipped, equippingOk
 end
 
-function Flurry_OnEvent(event)
-	--print(SPEC2["Standart"])
+local function Flurry_setSpec(list, zoneName, secondCall, mainZoneEquipped)
+	local noConfig = true
+	local isEquipped, equippingOk
+	for k,v in pairs(list) do
+		--print(k)
+		if (string.find(zoneName, k)) then
+			noConfig = false
+			isEquipped, equippingOk = EquipSet(k, v, secondCall)
+			break
+		end
+	end
+	if not secondCall and not equippingOk then Flurry_setSpec(list, GetSubZoneText(), true, (isEquipped or equippingOk)) end
+	if secondCall and noConfig and not mainZoneEquipped then EquipSet("Standard", list["Standard"], zoneName) end
+end
+
+function Flurry_OnEvent(event, ...)
+	--print(event)
+	--print("MainZone: "..GetZoneText())
+	--print("SubZone: "..GetSubZoneText())
+	
 	if (UnitAffectingCombat("player") or UnitIsDeadOrGhost("player")) then return; end
+	
+	local zoneName = GetZoneText()
+	local secondCall = false
+	local mainZoneEquipped = false
+	
+	if(event == "EQUIPMENT_SWAP_FINISHED") then
+		--print(arg1)
+		--print(arg2)
+		zoneName = GetSubZoneText()
+		secondCall = true
+		mainZoneEquipped = true
+		FlurryFrame:UnregisterEvent("EQUIPMENT_SWAP_FINISHED")
+	end
+	--print(SPEC2["Standart"])
 	local spec = GetSpecialization()
 	--print("Spec: "..spec)
 	
 	if(spec == 1) then
-		Flurry_setSpec(SPEC1)
+		FLURRY_wait(0.5, Flurry_setSpec, SPEC1, zoneName, secondCall, mainZoneEquipped)
+		--Flurry_setSpec(SPEC1, zoneName, secondCall)
 	end
 	
 	if(spec == 2) then
-		Flurry_setSpec(SPEC2)
+		FLURRY_wait(0.5, Flurry_setSpec, SPEC2, zoneName, secondCall, mainZoneEquipped)
 	end
 	
 	if(spec == 3) then
-		Flurry_setSpec(SPEC3)
+		FLURRY_wait(0.5, Flurry_setSpec, SPEC3, zoneName, secondCall, mainZoneEquipped)
 	end
 end
