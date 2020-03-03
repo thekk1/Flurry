@@ -1,6 +1,12 @@
 local Flurry, FlurryVars = ...
 FlurryVars.SPEC1 = {
 
-["Standard"] = "Normal";
+["Standard"] = "Waffen";
+--["Neuheim"] = "Neuheim";
+--["Murlocos Versteck"] = "Neuheim";
+
+}
+
+FlurryVars.MSG1 = {
 
 }

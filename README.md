@@ -1,11 +1,8 @@
 # Flurry
 WoW - Addon - Change equip by zone (and subzone)
 
-Download Release V1 under releases:
-
-https://github.com/thekk1/Flurry/releases/download/v1.0/Flurry.zip
-
-and unzip to your WoW Addon folder. (..\World of Warcraft\_retail_\Interface\AddOns).
+Download and unzip to your WoW Addon folder. (..\World of Warcraft\_retail_\Interface\AddOns)
+Rename folder "Flurry-master" to "Flurry".
 
 ## Addon changes equip by this events:
 - ZONE_CHANGED
@@ -29,20 +26,20 @@ Each file is for one of your Talent specialisation in the order from top to down
 For example the warrior's book:
 1. Weapon - Spec1.lua
 2. Fury   - Spec2.lua
-3. Tank   . Spec3.lua
+3. Tank   - Spec3.lua
 
 ### Standart outfit:
-For fallback outfits I have implemented a not existing "zones" named "Standard" in each Spec-file which is used in every case where is no configurated zone. E.g. I use it for my PvP gear.
+For fallback outfits I have implemented not existing "zones" named "Standard" in each Spec-file which is used in every case where is no configurated zone. E.g. I use it for my PvP gear.
 
 ### Example 1:
 Lets make a Outfit for Nazjatar and The Eternal Palace and call it "Nazjatar Items" for the fury spec of your incredible warrior.
 So you have to add these two lines to file "Spec2.lua":
-["Nazjatar"] = "Nazjatar Items";
-["The Eternal Palace"] = "Nazjatar Items";
+["Nazjatar"] = "Nazjatar";
+["The Eternal Palace"] = "Nazjatar";
 
 ### Example 2:
 You want to wear the special cape for murlocs in newhome, make an outfit called "Annoying Murlocs" which ignore all slots excluding the back and set the cape in the back slot.
-So you have to add these line to all trhee files "Spec1.lua, Spec2.lua, Spec3.lua":
+So you have to add these line to all three files "Spec1.lua, Spec2.lua, Spec3.lua":
 ["Newhome"] = "Annoying Murlocs";
 
 ### Example 3:
@@ -62,6 +59,13 @@ So you have to refer by yourself to the following sites or ingame maps:
 - https://wow.gamepedia.com/Arena
 - https://wow.gamepedia.com/Battleground
 - https://wow.gamepedia.com/Zone 
+
+## Messages:
+Now you can add hints to your spec-files that will popup if your gear is changed.
+Just add a line in the 'FlurryVars.MSGx' block of your specialisation like:
+["N'Zoth"] = "Don't fuckn' cross the links!";
+
+## Disclaimer:
 
 This addon is very simple and very effective.
 I will not do any special development for ingame menu setup because this needs a fully internationalisation
