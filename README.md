@@ -63,8 +63,11 @@ So you have to refer by yourself to the following sites or ingame maps:
 - https://wow.gamepedia.com/Zone 
 
 ## Messages:
-Now you can add hints to your spec-files that will popup if your gear is changed.
-Just add a line in the 'FlurryVars.MSGx' block of your specialisation like:
+Now you can add hints to your spec-files that will popup if your gear is changed.  
+__Use the name of the zone or the outfit.  
+In that case: Don't use the name of a zone for an outfit.__  
+Just add a line in the 'FlurryVars.MSGx' block of your specialisation like:  
+
 ["N'Zoth"] = "Don't fuckn' cross the links!";
 
 ## Disclaimer:
