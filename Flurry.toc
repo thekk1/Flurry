@@ -1,6 +1,6 @@
-## Interface: 80200
+## Interface: 90200
 ## Title: Flurry
-## Notes: Fast equip change by zone.
+## Notes: Fast equip change by zone. Messages by Zone and Gear.
 ## Author: thekk
 ## eMail: thekk@gmx.de
 ## DefaultState: enabled

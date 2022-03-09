@@ -52,8 +52,18 @@ function FLURRY_wait(delay, func, ...)
   return true;
 end
 
-local function EquipSet(k, v, secondCall, msgList)
-	local setID = C_EquipmentSet.GetEquipmentSetID(v)
+local function FlurryMsg(zone, gear, msgList)
+	for mk,mv in pairs(msgList) do
+		--print(mk, "-", GetSubZoneText() )
+		if (string.find(zone, mk) or string.find(gear, mk)) then
+			message(mv)
+			break
+		end
+	end
+end
+
+local function EquipSet(zone, gear, secondCall, msgList)
+	local setID = C_EquipmentSet.GetEquipmentSetID(gear)
 	local name,_,_,isEquipped, numItems, numEquipped, numInInventory, numLost, numIgnored = C_EquipmentSet.GetEquipmentSetInfo(setID)
 	local equippingOk = false
 	--print(name.." "..setID.." is equipped:")
@@ -62,16 +72,11 @@ local function EquipSet(k, v, secondCall, msgList)
 	if(not isEquipped) then
 		equippingOk = C_EquipmentSet.UseEquipmentSet(setID)
 		if equippingOk then
-			print("Zone: "..k.." - Equip: "..v)
-			for mk,mv in pairs(msgList) do
-				if (string.find(k, mk) or string.find(v, mk)) then
-					message(mv)
-					break
-				end
-			end
+			print("Zone: "..zone.." - Equip: "..gear)
+			FlurryMsg("", gear, msgList)
 			if not secondCall then FlurryFrame:RegisterEvent("EQUIPMENT_SWAP_FINISHED") end
 		else
-			print("No equippent : '"..v.."' for zone: '"..k.."' found")
+			print("No equippent : '"..gear.."' for zone: '"..zone.."' found")
 		end
 	end
 	return isEquipped, equippingOk
@@ -118,13 +123,16 @@ function Flurry_OnEvent(event, ...)
 	--print("ZoneName: "..zoneName)
 	if(spec == 1) then
 		FLURRY_wait(0.5, Flurry_setSpec, SPEC1, zoneName, secondCall, mainZoneEquipped, MSG1)
+		FlurryMsg(GetSubZoneText(), "", MSG1)
 	end
 	
 	if(spec == 2) then
 		FLURRY_wait(0.5, Flurry_setSpec, SPEC2, zoneName, secondCall, mainZoneEquipped, MSG2)
+		FlurryMsg(GetSubZoneText(), "", MSG2)
 	end
 	
 	if(spec == 3) then
 		FLURRY_wait(0.5, Flurry_setSpec, SPEC3, zoneName, secondCall, mainZoneEquipped, MSG3)
+		FlurryMsg(GetSubZoneText(), "", MSG3)
 	end
 end

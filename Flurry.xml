@@ -6,7 +6,7 @@
 	<Script file="Spec1.lua"/>
 	<Script file="Spec2.lua"/>
 	<Script file="Spec3.lua"/>
-	<Script file="Localization.de.lua"/>
+	<!-- <Script file="Localization.de.lua"/> -->
 	
 	<!-- My Script -->
 	<Script file="Flurry.lua"/>

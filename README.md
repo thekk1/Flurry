@@ -51,7 +51,7 @@ If you want to wear a special outfit in all zones where have the letters "new", 
 ["new"] = "iamwithstupid";
 
 ### Pvp:
-Because of a potential long list of battlegrounds and arenas I use the standart outfit for pvp gear and just specialize for special zones like nazjatar.
+Because of a potential long list of battlegrounds and arenas I use the standard outfit for pvp gear and just specialize for special zones like nazjatar or a special battleground.
 
 ## Hints:
 You can also use subzones(Showed name of place on minimap) in raid and mythic instances for specific gear for ever boss.
@@ -63,11 +63,9 @@ So you have to refer by yourself to the following sites or ingame maps:
 - https://wow.gamepedia.com/Zone 
 
 ## Messages:
-Now you can add hints to your spec-files that will popup if your gear is changed.  
-__Use the name of the zone or the outfit.  
-In that case: Don't use the name of a zone for an outfit.__  
-Just add a line in the 'FlurryVars.MSGx' block of your specialisation like:  
-
+Now you can add hints to your spec-files that will popup if your gear is changed or just by entering a zone.
+Messages for a zone are priorized so messages for the gear will be hidden in this case.
+Just add a line in the 'FlurryVars.MSGx' block of your specialisation like:
 ["N'Zoth"] = "Don't fuckn' cross the links!";
 
 ## Disclaimer:

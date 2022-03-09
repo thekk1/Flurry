@@ -1,7 +1,7 @@
 local Flurry, FlurryVars = ...
 FlurryVars.SPEC2 = {
 
-["Standard"] = "Normal";
+["Standard"] = "Fury";
 --["Die Ritualkammer"] = "SingleTarget";
 ["Die Zwielichtlandung"] = "MultiTarget";
 --["Die Brutgrube"] = "SingleTarget";
@@ -17,6 +17,12 @@ FlurryVars.SPEC2 = {
 --["Die Brutstätte"] = "Orgozoa";
 --["Die Schwelle der Träume"] = "Entartung";
 --["Die Hallen der Auserwählten"] = "Ashvane";
+["Der Schlund"] = "Setbonus";
+["Sanktum der Herrschaft"] = "Setbonus";
+["Zereth Mortis"] = "Zereth Mortis";
+["Korthia"] = "Zereth Mortis";
+["Der Schlund"] = "Zereth Mortis";
+["Der Riss"] = "Zereth Mortis";
 }
 
 FlurryVars.MSG2 = {
@@ -25,4 +31,5 @@ FlurryVars.MSG2 = {
 ["Der Schwarm"] = "Essenz 'Reinigungsprotokoll' und Talent 'Plötzlicher Tod' einstellen!";
 ["Kern der Unendlichen Wahrheit"] = "Essenz 'Reinigungsprotokoll' und Talent 'Plötzlicher Tod' einstellen!";
 ["N'Zoth"] = "Essenz 'Reinigungsprotokoll' und Talent 'Plötzlicher Tod' einstellen!";
+["Der Schreiende Amboss"] = "Unter Tollkühnheit keine Bälle angreifen!";
 }
