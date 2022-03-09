@@ -66,6 +66,7 @@ So you have to refer by yourself to the following sites or ingame maps:
 Now you can add hints to your spec-files that will popup if your gear is changed or just by entering a zone.
 Messages for a zone are priorized so messages for the gear will be hidden in this case.
 Just add a line in the 'FlurryVars.MSGx' block of your specialisation like:
+
 ["N'Zoth"] = "Don't fuckn' cross the links!";
 
 ## Disclaimer:
